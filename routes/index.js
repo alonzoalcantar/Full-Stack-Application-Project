@@ -12,9 +12,6 @@ router.get('/', function(req, res, next) {
   res.render('index', { title: 'Hotel Booking App' });
 });
 
-router.get('/private', isLoggedIn, function(req, res){
-  res.render('private', {title: 'Private Page'})
-});
 
 //OAuth routes
 

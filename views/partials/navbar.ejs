@@ -1,14 +1,4 @@
-<!-- 
-    <ul>
-        <li><a href="/">Home</a></li>
-        <% if (user) { %>
-        <li><a href="/logout">Log Out</a></li>
-        <li><a href="/private">Private Page</a></li>
-        <% }else { %>
-        <li><a href="/auth/google">Log In</a></li>
-        <% } %> 
-      </ul>
-   -->
+
       <nav class="navbar navbar-expand-lg bg-light">
         <div class="container-fluid">
           <a class="navbar-brand" href="#">My Booking App</a>
@@ -22,7 +12,7 @@
               </li>
               <% if (user) { %>
               <li class="nav-item">
-                <a class="nav-link" href="/private">Private Page</a>
+                <a class="nav-link" href="/hotels/new">New Hotel</a>
               </li>
               <li class="nav-item">
                 <a class="nav-link" href="/logout">Log Out</a>
