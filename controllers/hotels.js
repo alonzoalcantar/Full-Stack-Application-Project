@@ -14,8 +14,6 @@ function newHotel(req, res){
 };
 
 
-
-
 function create(req, res) {
     const hotel = new Hotel(req.body);
     hotel.save(function(err) {
@@ -27,7 +25,6 @@ function create(req, res) {
       res.redirect('/hotels/');
     });
   };
-
 
 
 function index(req, res) {
