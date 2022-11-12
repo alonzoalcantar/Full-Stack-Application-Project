@@ -3,7 +3,8 @@ const Hotel = require('../models/hotel');
 
 module.exports = {
     new: newHotel,
-    create
+    create,
+    index
 };
 
 
@@ -22,7 +23,20 @@ function create(req, res) {
       if (err) return res.redirect('/hotels/new');
       console.log(hotel);
       // for now, redirect right back to new.ejs
-      res.redirect('/hotels/new');
+      res.redirect('/hotels/');
     });
-  }
+  };
+
+
+
+function index(req, res) {
+    Hotel.find({}, function(err, hotels){
+        if(err){
+            console.log(err);
+            res.redirect('/');
+        }
+        res.render('hotels/index', { hotels });
+    });
+}
+
   

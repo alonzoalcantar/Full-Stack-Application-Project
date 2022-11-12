@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+
+  <%- include('../partials/header'); %> 
+
+  <body>
+    <%- include('../partials/navbar'); %> 
+    
+
+    <h1>Hotel List</h1>
+  <table>
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Length Of Stay</th>
+        <th>More Information</th>
+      </tr>
+    </thead>
+    <tbody>
+      <!-- Write the line of EJS to iterate over movies using forEach -->
+      <% hotels.forEach(h=> { %> 
+        <tr>
+          <td><%= h.name %></td>
+          <td><%= h.lengthOfStay %></td>
+            <td>
+                <a href="/hotels/<%= h._id %>">Details</a>
+            </td>
+
+        </tr>
+      <!-- Close the forEach using EJS here -->
+      <% }); %> 
+    </tbody>
+  </table>
+</body>
+</html>
+

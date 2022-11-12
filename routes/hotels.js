@@ -10,7 +10,9 @@ const isLoggedIn = require('../config/auth');
 /* GET home page. */
 router.get('/new',isLoggedIn, hotelsCtrl.new);
 
-router.post('/', hotelsCtrl.create);
+router.post('/', isLoggedIn, hotelsCtrl.create);
+
+router.get('/', isLoggedIn, hotelsCtrl.index);
 
 
 module.exports = router;
