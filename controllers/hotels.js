@@ -4,7 +4,8 @@ const Hotel = require('../models/hotel');
 module.exports = {
     new: newHotel,
     create,
-    index
+    index,
+    show
 };
 
 
@@ -36,6 +37,12 @@ function index(req, res) {
             res.redirect('/');
         }
         res.render('hotels/index', { hotels });
+    });
+}
+
+function show (req, res) {
+    Hotel.findById(req.params.id, function(err, hotel){
+        res.render('hotels/show', { title: 'Hotel Details', hotel});
     });
 }
 

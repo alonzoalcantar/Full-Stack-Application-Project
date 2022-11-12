@@ -14,5 +14,7 @@ router.post('/', isLoggedIn, hotelsCtrl.create);
 
 router.get('/', isLoggedIn, hotelsCtrl.index);
 
+router.get('/:id', hotelsCtrl.show);
+
 
 module.exports = router;
