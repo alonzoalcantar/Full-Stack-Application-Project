@@ -28,7 +28,7 @@ passport.use(
                     user = await User.create({
                         name: profile.displayName,
                         googleId: profile.id,
-                        email: profile.email[0].value,
+                        email: profile.emails[0].value,
                         avatar: profile.photos[0].value,
                     });
                     return cb(null, user);
@@ -47,7 +47,7 @@ passport.serializeUser(function (user, cb){
 });
 
 passport.deserializeUser(function (userId, cb) {
-    User.findById(UserId).then( function (user) {
+    User.findById(userId).then( function (user) {
         cb(null, user);
     });
 });

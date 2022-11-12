@@ -2,12 +2,19 @@ var express = require('express');
 var router = express.Router();
 var passport = require('passport');
 
+
+//Private route Middleware
+
+const isLoggedIn = require('../config/auth');
+
 /* GET home page. */
 router.get('/', function(req, res, next) {
-  res.render('index', { title: 'Express' });
+  res.render('index', { title: 'Hotel Booking App' });
 });
 
-
+router.get('/private', isLoggedIn, function(req, res){
+  res.render('private', {title: 'Private Page'})
+});
 
 //OAuth routes
 
