@@ -2,6 +2,7 @@ var Hotel = require("../models/hotel");
 
 module.exports = {
   create,
+  delete: deleteReview
 };
 
 function create(req, res) {
@@ -11,4 +12,12 @@ function create(req, res) {
       res.redirect(`/hotels/${hotel._id}`);
     });
   });
+}
+
+
+function deleteReview (req, res) {
+    Hotel.findOne({"_id": req.params.id}).then(function(hotel){
+        hotel.remove();
+        res.redirect(`/hotels/${hotel._id}`)
+    });
 }

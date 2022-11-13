@@ -61,6 +61,14 @@
       <tbody>
         <% hotel.reviews.forEach(function(r) { %>
           <tr>
+
+            <td>
+            <form action="/hotels/<%= r.id %>?_method=DELETE"
+                class="delete-form" method="POST">
+                <button type="submit">X</button>
+              </form>
+            </td>
+
             <td><%= r.createdAt.toLocaleDateString() %></td>
             <td><%= r.content %></td>
             <td><%= r.rating %></td>

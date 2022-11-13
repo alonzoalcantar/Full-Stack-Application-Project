@@ -6,6 +6,7 @@ module.exports = {
   create,
   index,
   show,
+  delete: deleteHotel,
 };
 
 function newHotel(req, res) {
@@ -14,6 +15,7 @@ function newHotel(req, res) {
 
 function create(req, res) {
   const hotel = new Hotel(req.body);
+  hotel.userRecommending = req.user._id;
   hotel.save(function (err) {
     if (err) return res.redirect("/hotels/new");
     console.log(hotel);
@@ -44,4 +46,13 @@ function show(req, res) {
         });
       });
     });
+}
+
+
+function deleteHotel (req, res) {
+    Hotel.findOne({"_id": req.params.id, userRecommending: req.user._id }).then(function(hotel){
+        hotel.remove();
+        res.redirect('/hotels')
+    });
+    
 }

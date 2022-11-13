@@ -6,10 +6,12 @@ module.exports = {
   create,
   index,
   addRoom,
+  delete: deleteRoom
 };
 
 function create(req, res) {
   const room = new Room(req.body);
+  room.userRecommending = req.user._id;
   room.save(function (err) {
     if (err) return res.redirect("/rooms/new");
     console.log(room);
@@ -38,4 +40,12 @@ function addRoom(req, res) {
       res.redirect(`/hotels/${hotel._id}`);
     });
   });
+}
+
+function deleteRoom (req, res) {
+    Room.findOne({"_id": req.params.id, userRecommending: req.user._id }).then(function(room){
+        room.remove();
+        res.redirect('/rooms')
+    });
+    
 }

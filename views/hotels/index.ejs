@@ -20,6 +20,16 @@
       <!-- Write the line of EJS to iterate over movies using forEach -->
       <% hotels.forEach(h=> { %> 
         <tr>
+
+            <td>
+
+            <form action="/hotels/<%= h.id %>?_method=DELETE"
+                class="delete-form" method="POST">
+                <button type="submit">X</button>
+              </form>
+
+              </td>
+
           <td><%= h.name %></td>
           <td><%= h.lengthOfStay %></td>
             <td>

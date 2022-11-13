@@ -9,8 +9,12 @@ const roomSchema = new Schema(
     smoking: String,
   },
   {
-    timestamps: true,
+    timestamps: true
   }
 );
 
-module.exports = mongoose.model("Room", roomSchema);
+
+
+module.exports = mongoose.model("Room", roomSchema)
+
+
