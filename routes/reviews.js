@@ -1,10 +1,9 @@
-
-var express = require('express');
+var express = require("express");
 var router = express.Router();
-var reviewsCtrl = require('../controllers/reviews');
+var reviewsCtrl = require("../controllers/reviews");
 
-const isLoggedIn = require('../config/auth');
+const isLoggedIn = require("../config/auth");
 
-router.post('/hotels/:id/reviews', isLoggedIn, reviewsCtrl.create);
+router.post("/hotels/:id/reviews", isLoggedIn, reviewsCtrl.create);
 
 module.exports = router;
