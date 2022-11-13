@@ -9,4 +9,6 @@ router.get('/new', isLoggedIn, roomsCtrl.new);
 router.post('/', isLoggedIn, roomsCtrl.create);
 router.get('/', isLoggedIn, roomsCtrl.index);
 
+
+
 module.exports = router;

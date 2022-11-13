@@ -14,8 +14,25 @@
     <div><%= hotel.serviceSchedule %></div>
     <div>Length of Stay: </div>
     <div><%= hotel.lengthOfStay %></div>
+    <div>Rooms:</div>
+    <ul>
+      <%- hotel.room.map(r => 
+        `<li>${r.bedsize} <small>${r.roompackage}</small></li>`
+      ).join('') %>
+    </ul>
   </section>
   
+
+  <form id="add-room-to-hotel" action="/hotels/<%= hotel._id %>/rooms" method="POST">
+    <select name="roomId">
+      <%- rooms.map(r => 
+        `<option value="${r._id}">${r.bedsize}</option>`
+      ).join('') %>
+    </select>
+    <button type="submit">Add to Rooms</button>
+  </form>
+
+
   <br><br><h2>Reviews</h2>
   <form id="add-review-form" method="POST"
     action="/hotels/<%= hotel._id %>/reviews">
@@ -32,7 +49,7 @@
     <input type="submit" value="Add Review">
   </form>
   
-  <% if (hotel.reviews) { %>
+  <% if (hotel.reviews.length) { %>
     <table>
       <thead>
         <tr>
@@ -54,4 +71,3 @@
   <% } else { %>
     <h5>No Reviews Yet</h5>
   <% } %>
-  </body>

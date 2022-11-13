@@ -1,6 +1,7 @@
 var express = require('express');
 var router = express.Router();
 var hotelsCtrl = require('../controllers/hotels');
+var roomsCtrl = require('../controllers/rooms');
 
 
 //Private route Middleware
@@ -15,6 +16,8 @@ router.post('/', isLoggedIn, hotelsCtrl.create);
 router.get('/', isLoggedIn, hotelsCtrl.index);
 
 router.get('/:id', isLoggedIn, hotelsCtrl.show);
+
+router.post('/:id/rooms', roomsCtrl.addRoom);
 
 
 module.exports = router;
