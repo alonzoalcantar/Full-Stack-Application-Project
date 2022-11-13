@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+
+  <%- include('../partials/header'); %> 
+
+  <body>
+    <%- include('../partials/navbar'); %> 
+    
+    <div>Select your Room for your Stay:</div>
+    
+    <form id="add-room-form" action="/rooms" method="POST">
+      <label>Bed Size:</label>
+      <select name="bedsize">
+        <option value="Queen">Queen</option>
+        <option value="King">King</option>
+        <option value="Double Queen">Double Queen</option>
+        <option value="Double King">Double King</option>
+      </select>
+      <label>Room Package:</label>
+      <select name="roompackage">
+        <option value="Standard Room">Standard Room</option>
+        <option value="Breakfast Package">Breakfast Package</option>
+        <option value="Dinner Package">Dinner Package</option>
+        <option value="Combination Package">Combination Package</option>
+      </select>
+      <label>Non-Smoking Room:</label>
+      <select name="smoking">
+        <option value="Non-Smoking">Non-Smoking</option>
+        <option value="Smoking">Smoking</option>
+      </select>
+      <input type="submit" value="Select Room Type">
+    </form>

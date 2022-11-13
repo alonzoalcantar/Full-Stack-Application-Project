@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+
+  <%- include('../partials/header'); %> 
+
+  <body>
+    <%- include('../partials/navbar'); %> 
+
+
+    <h1>Room List</h1>
+    <table>
+      <thead>
+        <tr>
+          <th>Bed Size</th>
+          <th>Room Package</th>
+          <th>Non-Smoking</th>
+        </tr>
+      </thead>
+      <tbody>
+        <!-- Write the line of EJS to iterate over movies using forEach -->
+        <% rooms.forEach(r=> { %> 
+          <tr>
+            <td><%= r.bedsize %></td>
+            <td><%= r.roompackage %></td>
+            <td>
+              <%= r.smoking %> 
+            </td>
+          
+  
+          </tr>
+        <!-- Close the forEach using EJS here -->
+        <% }); %> 
+      </tbody>
+    </table>
