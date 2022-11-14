@@ -8,14 +8,15 @@
     
 
 <section id="show-page">
-    <div>Name: </div>
+    <div>Name:</div>
     <div><%= hotel.name %></div>
     <div>Service Schedule: </div>
     <div><%= hotel.serviceSchedule %></div>
     <div>Length of Stay: </div>
     <div><%= hotel.lengthOfStay %></div>
-    <div>Rooms:</div>
+    
     <ul>
+        <h5>Rooms:</h5> 
       <%- hotel.room.map(r => 
         `<li>${r.bedsize} <small>${r.roompackage}</small></li>`
       ).join('') %>
@@ -31,8 +32,8 @@
     </select>
     <button type="submit">Add to Rooms</button>
   </form>
-
-  <a href="/hotels/<%= hotel._id %>/edit">Edit Reservation</a>
+<!-- 
+  <a href="/hotels/<%= hotel._id %>/edit">Edit Reservation</a> -->
 
   <br><br><h2>Reviews</h2>
   <form id="add-review-form" method="POST"
@@ -54,7 +55,7 @@
     <table>
       <thead>
         <tr>
-             <th>Date</th>
+            <th>Date</th>
           <th>Review</th>
           <th>Rating</th>
         </tr>

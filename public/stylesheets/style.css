@@ -2,7 +2,63 @@ h1 {
     text-align: center;
 }
 
-table {
+thead {
     text-align: center;
+}
+
+
+td {
+    padding: 10px;
+    text-align: center;
+}
+
+tbody {
     margin: auto;
+    grid-template-rows: auto auto auto auto;
+}
+
+div {
+    display: inline;
+    grid-template-columns: auto auto auto;
+    text-align: center;
+    margin: 35px;
+}
+
+ul {
+    text-align:center;
+}
+
+h2 {
+    text-align: center;
+    color: black;
+    background-color: violet;
+    border:  inset 5px;
+    border-color: black;
+}
+
+h5 {
+    text-align: center;
+    margin: 35px;
+}
+
+form {
+    text-align: center;
+}
+
+label {
+    color: black;
+    font-size: 18px;
+    margin: 14px;
+    display: block;
+    text-align: center;
+}
+
+th {
+    text-align: center;
+    border: solid;
+    display: inline;
+}
+
+section {
+    margin-top: 35px;
 }
