@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+
+  <%- include('../partials/header'); %> 
+
+  <body>
+    <%- include('../partials/navbar'); %> 
+
+
+ 
+
+      <h2>Edit Reservation:</h2>
+      <form id="edit-hotel-form" action="/hotels/<%= hotels._id %>/?_method=PUT" method="POST">
+  <label>Hotel:
+    <select name="name">
+      <option value="Marriott">Marriott</option>
+      <option value="Hilton">Hilton</option>
+      <option value="Hyatt">Hyatt</option>
+      <option value="Wyndham">Wyndham</option>
+    </select>
+  </label><br>
+  <label>Service Schedule:
+    <select name="serviceSchedule">
+      <option value="Daily">Daily</option>
+      <option value="Weekly">Weekly</option>
+      <option value="Upon Request">Upon Request</option>
+      <option value="No Service">No Service</option>
+    </select>
+  </label><br>
+  <label>Length of Stay:
+    <input type="number" name="lengthOfStay">
+  </label><br>
+ 
+  <input type="submit" value="Add Hotel">
+</form>
+
+
+
+
+  </body>
+</html>

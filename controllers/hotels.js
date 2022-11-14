@@ -7,6 +7,8 @@ module.exports = {
   index,
   show,
   delete: deleteHotel,
+//   edit,
+//   update
 };
 
 function newHotel(req, res) {
@@ -50,9 +52,30 @@ function show(req, res) {
 
 
 function deleteHotel (req, res) {
-    Hotel.findOne({"_id": req.params.id, userRecommending: req.user._id }).then(function(hotel){
+    Hotel.findOne({"_id": req.params.id, userRecommending: req.user._id}).then(function(hotel){
         hotel.remove();
         res.redirect('/hotels')
     });
     
 }
+
+// function edit (req, res) {
+//     const hotels = new Hotel(req.body);  
+//     Hotel.find({'_id': req.params.id}).then(function (hotel){ 
+//     res.render('hotels/edit', hotels, hotel)
+// })
+// }
+
+
+// function update (req, res) {
+//     Hotel.findOneAndUpdate({"_id":req.params.id}).then(function(hotel){
+//     hotel.name = req.body.name
+//     hotel.serviceSchedule= req.body.serviceSchedule
+//     hotel.lengthOfStay = req.body.lengthOfStay
+//     console.log(hotel)
+//     hotel.save(function(err) {
+//         if(err) return res.redirect('/hotels');
+//         res.redirect(`/hotels/${hotel._id}`);
+//     });
+// })
+// }

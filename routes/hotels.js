@@ -16,8 +16,12 @@ router.get("/", isLoggedIn, hotelsCtrl.index);
 
 router.get("/:id", isLoggedIn, hotelsCtrl.show);
 
+// router.get("/:id/edit", isLoggedIn, hotelsCtrl.edit);
+
 router.post("/:id/rooms", isLoggedIn, roomsCtrl.addRoom);
 
 router.delete("/:id", isLoggedIn, hotelsCtrl.delete);
+
+// router.put("/:id", isLoggedIn, hotelsCtrl.update);
 
 module.exports = router;

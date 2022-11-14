@@ -20,7 +20,7 @@
         <!-- Write the line of EJS to iterate over movies using forEach -->
         <% rooms.forEach(r=> { %> 
           <tr>
-            
+
             <td>
             <form action="/rooms/<%= r.id %>?_method=DELETE"
               class="delete-form" method="POST">
@@ -33,7 +33,12 @@
             <td>
               <%= r.smoking %> 
             </td>
+
+            <td><a href="/rooms/edit">Edit Room Type</a></td>
+
           </tr>
+
+          
 
         <!-- Close the forEach using EJS here -->
         <% }); %> 
