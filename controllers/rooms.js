@@ -56,14 +56,15 @@ function deleteRoom (req, res) {
 
 
 function edit (req, res) {
-    Room.find({'_id': req.params.id}).then(function (room){
+    Room.find({'_id': req.params.id, userRecommending: req.user._id }).then(function (room){
     res.render('rooms/edit', room)
 })
 }
 
 
 function update (req, res) {
-    Room.findOneAndUpdate({"_id":req.params.id}).then(function(room){
+    room.userRecommending = req.user._id;
+    Room.findOneAndUpdate({"_id":req.params.id, userRecommending: req.user._id }).then(function(room){
     room.bedsize = req.body.bedsize
     room.roompackage = req.body.roompackage
     room.smoking = req.body.smoking
