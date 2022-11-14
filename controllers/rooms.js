@@ -37,6 +37,7 @@ function index(req, res) {
 }
 
 function addRoom(req, res) {
+    room.userRecommending = req.user._id;
   Hotel.findById(req.params.id, function (err, hotel) {
     hotel.room.push(req.body.roomId);
     hotel.save(function (err) {

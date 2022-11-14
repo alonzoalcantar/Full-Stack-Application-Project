@@ -7,6 +7,7 @@ const roomSchema = new Schema(
     bedsize: String,
     roompackage: String,
     smoking: String,
+    userRecommending: String
   },
   {
     timestamps: true
