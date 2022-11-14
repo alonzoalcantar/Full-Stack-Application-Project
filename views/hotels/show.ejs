@@ -18,7 +18,7 @@
     <ul>
         <h5>Rooms:</h5> 
       <%- hotel.room.map(r => 
-        `<li>${r.bedsize} <small>${r.roompackage}</small></li>`
+        `<li>${r.bedsize} <small>${r.roompackage}, ${r.smoking}</small></li>`
       ).join('') %>
     </ul>
   </section>
@@ -52,14 +52,16 @@
   </form>
   
   <% if (hotel.reviews.length) { %>
-    <table>
-      <thead>
+    <table class="table">
+      <thead >
         <tr>
             <th>Date</th>
           <th>Review</th>
           <th>Rating</th>
         </tr>
       </thead>
+
+     
       <tbody>
         <% hotel.reviews.forEach(function(r) { %>
           <tr>
@@ -69,6 +71,7 @@
           </tr>
         <% }); %>
       </tbody>
+      
     </table>
   <% } else { %>
     <h5>No Reviews Yet</h5>

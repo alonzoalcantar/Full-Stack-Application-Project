@@ -8,12 +8,14 @@
 
 
     <h1>Room List</h1>
-    <table>
+    <table class="table">
       <thead>
         <tr>
+          <th>Delete</th>
           <th>Bed Size</th>
           <th>Room Package</th>
           <th>Non-Smoking</th>
+          <th>Edit Room</th>
         </tr>
       </thead>
       <tbody>
@@ -24,7 +26,7 @@
             <td>
             <form action="/rooms/<%= r.id %>?_method=DELETE"
               class="delete-form" method="POST">
-              <button type="submit">X</button>
+              <button type="submit">Delete</button>
             </form>
             </td>
 

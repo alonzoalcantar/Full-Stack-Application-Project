@@ -7,14 +7,12 @@ thead {
 }
 
 
-td {
-    padding: 10px;
-    text-align: center;
-}
+
 
 tbody {
     margin: auto;
     grid-template-rows: auto auto auto auto;
+    justify-content:space-between;
 }
 
 div {
@@ -53,12 +51,19 @@ label {
     text-align: center;
 }
 
-th {
-    text-align: center;
-    border: solid;
-    display: inline;
-}
+
 
 section {
     margin-top: 35px;
+}
+
+
+
+
+.delete-form {
+    text-align: left;
+}
+
+.table {
+    text-align: center;
 }

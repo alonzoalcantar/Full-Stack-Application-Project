@@ -8,9 +8,10 @@
     
 
     <h1>Hotel List</h1>
-  <table>
+  <table class="table">
     <thead>
       <tr>
+        <th>Delete</th>
         <th>Name</th>
         <th>Length Of Stay</th>
         <th>More Information</th>
@@ -22,12 +23,11 @@
         <tr>
 
             <td>
-
-            <form action="/hotels/<%= h.id %>?_method=DELETE"
+                <form action="/hotels/<%= h.id %>?_method=DELETE"
                 class="delete-form" method="POST">
-                <button type="submit">X</button>
+                <button type="submit">Delete</button>
               </form>
-
+            
               </td>
 
           <td><%= h.name %></td>
