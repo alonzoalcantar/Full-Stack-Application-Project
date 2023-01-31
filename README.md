@@ -2,6 +2,8 @@
 
 This is My Bookings App. Here you will be able to keep track of your various Hotel Reservations all in one place. You will be able to select your specifc Hotel and Room Type all from this application and rest assured your room will be ready!!
 
+This project has Google Oauth implemented so to use the web app you must log in with a google account. 
+
 ## My App
 
 ![MyApp](https://i.imgur.com/du3f4ky.png)
@@ -37,7 +39,7 @@ Trello Board : https://trello.com/b/XT8LQLPl/project-2
 
 ## Deploy Application
 
-To be determined.....
+https://aqueous-spire-88874.herokuapp.com/
 
 ### Technologies Used
 
